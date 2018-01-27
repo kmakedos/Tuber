@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="home">
+    <h1>Tuber downloader</h1>
+    <form method="post" name="url_form" action="videos">
+        URL:
+        <input type="text" name="url"/>
+        <input type="submit" name="Submit" value="Submit"/>
+    </form>
+</div>
+{% endblock %}

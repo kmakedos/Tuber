@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="videos">
+    { for value in data.items() }
+        <p>{{ data }}</p>
+        <br/>
+    { endfor }
+</div>
+{% endblock %}

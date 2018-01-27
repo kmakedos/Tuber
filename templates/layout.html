@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flask APP</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <body>
+        <header>
+            <div class="container">
+                <h1 class="logo">Tuber</h1>
+                <strong>
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="{{ url_for('home') }}">HOME</a></li>
+                            <li><a href="{{ url_for('videos') }}">VIDEOS</a></li>
+                            <li><a href="{{ url_for('downloaded') }}">DOWNLOADED</a></li>
+                        </ul>
+                    </nav>
+                </strong>
+            </div>
+        </header>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
+
+
