@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request
 import os
+from multiprocessing import Pool
+from pytube import YouTube
 
 
 app = Flask(__name__)
-from pytube import YouTube
-
+_pool = None
 
 @app.route('/')
 def home():
@@ -18,9 +19,10 @@ def videos():
 
 @app.route('/downloaded')
 def downloaded():
-    for song in os.walk('/tmp/Downloaded'):
-        print(">" + song)
-    return render_template('downloaded.html')
+    songlist = []
+    for folder,song in os.walk('/tmp/Downloaded/'):
+        songlist.append(song)
+    return render_template('downloaded.html', data = songlist)
 
 if __name__ == '__main__':
     if not os.path.exists('/tmp/Downloaded'):

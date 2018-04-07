@@ -2,6 +2,9 @@
 {% block content %}
 <div class="downloaded">
     <h1>Downloaded</h1>
-    <p>Test</p>
+    { for value in data.items() }
+        <p>{{ data }}</p>
+        <br/>
+    { endfor }
 </div>
 {% endblock %}
